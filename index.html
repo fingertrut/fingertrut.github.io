@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>久久澡婷杼久久婷婷婷草_视频品牌首页_澡婷杼官方频道</title>
+  <meta name="description" content="久久澡婷杼久久婷婷婷草是面向视频爱好者的品牌官网，提供精选短片、原创剧集、创作幕后与社区动态，适合关注影像内容与创作者生态的观众浏览。">
+  <meta name="keywords" content="澡婷杼视频,原创短片,剧集更新,创作者社区,影像幕后">
+  <style>
+    :root {
+      --brand: #0d3b66;
+      --brand-2: #1d6fa5;
+      --accent: #e07a5f;
+      --accent-2: #f2cc8f;
+      --bg: #f7f5f0;
+      --panel: #ffffff;
+      --ink: #1c2321;
+      --muted: #5f6b68;
+      --line: #dcd7cd;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(13, 59, 102, 0.08);
+      --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --header-h: 64px;
+      --notice-h: 38px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { max-width: 100%; display: block; }
+    button, input { font: inherit; }
+    h1, h2, h3, h4 { line-height: 1.3; margin: 0 0 0.5em; color: var(--brand); }
+    h1 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); letter-spacing: 0.02em; }
+    h2 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); }
+    h3 { font-size: 1.15rem; }
+    p { margin: 0 0 1em; }
+    ul { margin: 0 0 1em; padding-left: 1.2em; }
+    .wrap { width: min(1280px, 92%); margin: 0 auto; }
+
+    /* 吸顶公告 + 页头 */
+    .sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: var(--panel);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+    .notice {
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.82rem;
+      min-height: var(--notice-h);
+      display: flex;
+      align-items: center;
+    }
+    .notice .wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      padding: 0.35rem 0;
+    }
+    .notice strong { color: var(--accent-2); font-weight: 600; }
+    .site-header {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      background: var(--panel);
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      padding: 0.6rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+    .brand svg { width: 38px; height: 38px; flex: 0 0 auto; }
+    .brand-text { font-size: 1.05rem; letter-spacing: 0.02em; }
+    .main-nav {
+      display: flex;
+      gap: 0.4rem 1rem;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+    .main-nav a { color: var(--muted); padding: 0.2rem 0; }
+    .main-nav a:hover, .main-nav a:focus-visible { color: var(--brand); text-decoration: none; }
+    .search-box { margin-left: auto; display: flex; align-items: center; gap: 0.4rem; }
+    .search-box input {
+      width: 150px;
+      max-width: 42vw;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--bg);
+    }
+    .search-box input:focus-visible { outline: 2px solid var(--brand-2); outline-offset: 1px; }
+    .search-feedback { font-size: 0.8rem; color: var(--muted); width: 100%; }
+
+    /* 锚点偏移 */
+    section[id], article[id], div[id] { scroll-margin-top: calc(var(--notice-h) + var(--header-h) + 12px); }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #0d3b66 0%, #1d6fa5 62%, #3d8bb8 100%);
+      color: #fff;
+      padding: 3rem 0 2.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 { color: #fff; }
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero p { color: #e6f1f8; max-width: 40em; }
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.2rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.3rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { text-decoration: none; background: #c9664d; }
+    .btn-ghost { border-color: rgba(255,255,255,0.6); color: #fff; background: transparent; }
+    .btn-ghost:hover { text-decoration: none; background: rgba(255,255,255,0.12); }
+    .hero-art {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 220px;
+    }
+    .hero-art svg { width: 100%; max-width: 340px; height: auto; filter: drop-shadow(0 16px 30px rgba(0,0,0,0.25)); }
+    .hero-stats {
+      display: flex;
+      gap: 1.6rem;
+      margin-top: 1.6rem;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: #cfe3f1;
+    }
+    .hero-stats strong { display: block; font-size: 1.25rem; color: #fff; }
+
+    /* 主布局：三栏门户 */
+    .layout {
+      display: grid;
+      grid-template-columns: 178px minmax(0, 1fr) 248px;
+      gap: 1.6rem;
+      padding: 2.2rem 0 2.6rem;
+      align-items: start;
+    }
+    .channel-nav {
+      position: sticky;
+      top: calc(var(--notice-h) + var(--header-h) + 14px);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.9rem;
+      font-size: 0.9rem;
+    }
+    .channel-nav h2 { font-size: 0.95rem; margin-bottom: 0.7rem; color: var(--muted); letter-spacing: 0.06em; }
+    .channel-nav ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.15rem; }
+    .channel-nav a {
+      display: block;
+      padding: 0.4rem 0.55rem;
+      border-radius: 8px;
+      color: var(--ink);
+    }
+    .channel-nav a:hover, .channel-nav a:focus-visible { background: #eef4f8; text-decoration: none; color: var(--brand); }
+
+    .main-col { min-width: 0; display: grid; gap: 1.8rem; }
+    .side-col { min-width: 0; display: grid; gap: 1.4rem; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.35rem;
+      box-shadow: var(--shadow);
+    }
+    .panel > h2 { margin-bottom: 0.8rem; }
+    .eyebrow { font-size: 0.75rem; letter-spacing: 0.16em; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .lede { color: var(--muted); font-size: 0.95rem; }
+    .divider { height: 1px; background: var(--line); margin: 1rem 0; border: 0; }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(13,59,102,0.12); }
+    .card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+    .card-body { padding: 0.8rem 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.35rem; flex: 1; }
+    .card-body h3 { margin: 0; font-size: 1rem; }
+    .card-body .desc { font-size: 0.82rem; color: var(--muted); margin: 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.4rem; }
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: #eef4f8;
+      color: var(--brand-2);
+      white-space: nowrap;
+    }
+    .tag.accent { background: #fbe9e3; color: #b5523a; }
+    .meta-line { font-size: 0.75rem; color: var(--muted); display: flex; gap: 0.7rem; flex-wrap: wrap; }
+
+    /* 紧凑列表 */
+    .compact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.55rem; }
+    .compact-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.6rem;
+      align-items: baseline;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px dashed var(--line);
+      font-size: 0.9rem;
+    }
+    .compact-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .compact-list time { font-size: 0.75rem; color: var(--accent); white-space: nowrap; }
+
+    /* 分类入口 */
+    .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.7rem; }
+    .cat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding: 0.7rem 0.8rem;
+      border-radius: 10px;
+      background: #f4f1ea;
+      border: 1px solid transparent;
+      color: var(--ink);
+      font-size: 0.9rem;
+    }
+    .cat-item strong { color: var(--brand); font-size: 0.95rem; }
+    .cat-item span { font-size: 0.72rem; color: var(--muted); }
+    .cat-item:hover, .cat-item:focus-visible { border-color: var(--brand-2); text-decoration: none; background: #eef4f8; }
+
+    /* 深度解析 */
+    .deep h3 { margin-top: 1.3rem; padding-left: 0.6rem; border-left: 4px solid var(--accent); }
+    .deep p, .deep li { font-size: 0.94rem; }
+    .pull-quote {
+      border-left: 3px solid var(--brand-2);
+      background: #f3f8fb;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0;
+      color: var(--brand);
+      font-size: 0.92rem;
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* FAQ */
+    details { border-bottom: 1px solid var(--line); padding: 0.75rem 0; }
+    details:last-of-type { border-bottom: 0; }
+    summary { cursor: pointer; font-weight: 600; color: var(--brand); list-style: none; display: flex; justify-content: space-between; gap: 0.8rem; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { margin: 0.6rem 0 0; font-size: 0.9rem; color: var(--muted); }
+
+    /* 评论 */
+    .comment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.8rem; }
+    .comment {
+      background: #faf8f4;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.75rem 0.85rem;
+      font-size: 0.86rem;
+    }
+    .comment strong { display: block; color: var(--brand); font-size: 0.82rem; margin-bottom: 0.25rem; }
+    .comment p { margin: 0; color: var(--muted); }
+
+    /* 资讯 */
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+    .news-item { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #fff; }
+    .news-item img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+    .news-body { padding: 0.75rem 0.85rem 0.9rem; }
+    .news-body h3 { font-size: 0.98rem; margin: 0 0 0.3rem; }
+    .news-body time { font-size: 0.72rem; color: var(--accent); }
+    .news-body p { font-size: 0.82rem; color: var(--muted); margin: 0.35rem 0 0; }
+
+    /* 标签索引 */
+    .tag-index { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag-index a {
+      display: inline-block;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--brand);
+      font-size: 0.82rem;
+    }
+    .tag-index a:hover, .tag-index a:focus-visible { border-color: var(--brand-2); background: #eef4f8; text-decoration: none; }
+
+    /* 榜单 */
+    .rank-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; counter-reset: rank; }
+    .rank-list li {
+      counter-increment: rank;
+      display: grid;
+      grid-template-columns: 1.6rem 1fr auto;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.88rem;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px dashed var(--line);
+    }
+    .rank-list li::before {
+      content: counter(rank);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: #eef4f8;
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+    .rank-list li:nth-child(1)::before { background: var(--accent); color: #fff; }
+    .rank-list .score { color: var(--accent); font-weight: 600; font-size: 0.8rem; }
+
+    /* 时间线 */
+    .timeline { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.8rem; }
+    .timeline li { display: grid; grid-template-columns: 4.4rem 1fr; gap: 0.7rem; font-size: 0.88rem; }
+    .timeline time { color: var(--accent); font-weight: 600; font-size: 0.8rem; }
+
+    /* 侧栏小面板 */
+    .side-panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.05rem; }
+    .side-panel h2 { font-size: 1rem; margin-bottom: 0.6rem; }
+    .side-panel .compact-list li { font-size: 0.84rem; }
+
+    /* 页尾 */
+    .site-footer {
+      background: #102a3c;
+      color: #c6d6e0;
+      padding: 2.4rem 0 1.6rem;
+      font-size: 0.86rem;
+      margin-top: 1rem;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 1.6rem; }
+    .site-footer h3 { color: #fff; font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .site-footer a { color: #c6d6e0; }
+    .site-footer a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 1.6rem; padding-top: 1rem; font-size: 0.78rem; color: #8fa6b5; display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; justify-content: space-between; }
+    .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.35rem; }
+
+    /* 搜索无结果 */
+    .no-result { display: none; color: var(--accent); font-size: 0.85rem; margin-top: 0.4rem; }
+    .no-result.show { display: block; }
+    .is-hidden { display: none !important; }
+
+    @media (max-width: 1024px) {
+      .layout { grid-template-columns: 1fr 240px; }
+      .channel-nav { grid-column: 1 / -1; position: static; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.8rem; }
+      .channel-nav h2 { width: 100%; margin: 0 0 0.2rem; }
+      .channel-nav ul { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+      .channel-nav a { padding: 0.3rem 0.6rem; border: 1px solid var(--line); }
+      .hero .wrap { grid-template-columns: 1fr; }
+      .hero-art { order: -1; min-height: 150px; }
+      .hero-art svg { max-width: 240px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      .layout { grid-template-columns: 1fr; gap: 1.2rem; }
+      .side-col { order: 2; }
+      .main-nav { font-size: 0.85rem; gap: 0.3rem 0.7rem; }
+      .search-box { width: 100%; margin-left: 0; }
+      .search-box input { width: 100%; max-width: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding: 2rem 0 1.8rem; }
+      .panel { padding: 1rem; }
+      .notice .wrap { font-size: 0.76rem; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告 + 页头 -->
+<div class="sticky-top">
+  <div class="notice" role="status" aria-label="站点公告">
+    <div class="wrap">
+      <strong>本周新增</strong>
+      <span>12 条创作者档案 · 澡婷杼秋季短片单元 8 部上线 · 社区讨论帖 46 条</span>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/#hero" class="brand" aria-label="久久澡婷杼久久婷婷婷草 首页">
+        <svg viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="brandG" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e07a5f"/>
+              <stop offset="1" stop-color="#1d6fa5"/>
+            </linearGradient>
+          </defs>
+          <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#brandG)"/>
+          <circle cx="24" cy="24" r="10" fill="none" stroke="#fff" stroke-width="2.6"/>
+          <path d="M20 18 L32 24 L20 30 Z" fill="#fff"/>
+        </svg>
+        <span class="brand-text">久久澡婷杼久久婷婷婷草</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#shorts">短片</a>
+        <a href="/#series">剧集</a>
+        <a href="/#behind">幕后</a>
+        <a href="/#community">社区</a>
+        <a href="/#guide">指南</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="search-box">
+        <label for="siteSearch" class="sr-only" style="position:absolute;left:-9999px;">搜索站内条目</label>
+        <input id="siteSearch" type="search" placeholder="搜条目 / 类型 / 创作者" aria-describedby="searchTip">
+        <span id="searchTip" class="search-feedback" aria-live="polite"></span>
+      </div>
+    </div>
+  </header>
+</div>
+
+<!-- 首屏 -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" style="color:#f2cc8f;">VIDEO BRAND · ORIGINAL CONTENT</p>
+      <h1>久久澡婷杼久久婷婷婷草</h1>
+      <p>一个以原创短片、微剧集与创作者纪实为核心的视频内容品牌。每周更新澡婷杼短片单元与社区档案，围绕影像叙事、幕后制作与观看判断展开持续记录。</p>
+      <div class="hero-actions">
+        <a href="/#shorts" class="btn btn-primary">浏览本周新片</a>
+        <a href="/#guide" class="btn btn-ghost">观看路径指南</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>186</strong>已上线短片</div>
+        <div><strong>24</strong>在播剧集</div>
+        <div><strong>9.1</strong>社区均分</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 360 280" role="img">
+        <defs>
+          <linearGradient id="screenG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2cc8f"/>
+            <stop offset="1" stop-color="#e07a5f"/>
+          </linearGradient>
+        </defs>
+        <rect x="30" y="34" width="300" height="180" rx="16" fill="#0b2a40" stroke="#3d8bb8" stroke-width="2"/>
+        <rect x="46" y="50" width="268" height="148" rx="8" fill="url(#screenG)" opacity="0.92"/>
+        <circle cx="180" cy="124" r="30" fill="#0d3b66" opacity="0.85"/>
+        <path d="M170 108 L198 124 L170 140 Z" fill="#fff"/>
+        <rect x="70" y="222" width="220" height="10" rx="5" fill="#3d8bb8" opacity="0.5"/>
+        <rect x="100" y="238" width="160" height="8" rx="4" fill="#3d8bb8" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏门户布局 -->
+<div class="wrap layout">
+
+  <!-- 左频道索引 -->
+  <aside class="channel-nav" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul>
+      <li><a href="/#shorts">原创短片</a></li>
+      <li><a href="/#series">微剧集</a></li>
+      <li><a href="/#behind">幕后纪实</a></li>
+      <li><a href="/#creator">创作者档案</a></li>
+      <li><a href="/#community">社区讨论</a></li>
+      <li><a href="/#news">行业动态</a></li>
+      <li><a href="/#rank">口碑榜单</a></li>
+      <li><a href="/#faq">观看问答</a></li>
+      <li><a href="/#guide">观看指南</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中主内容 -->
+  <main class="main-col" id="main">
+
+    <!-- 板块1：主题领域概览 -->
+    <section class="panel" id="overview" aria-labelledby="overview-h">
+      <p class="eyebrow">领域概览</p>
+      <h2 id="overview-h">久久澡婷杼久久婷婷婷草 的内容方向与当前看点</h2>
+      <p class="lede">从 2023 年起，久久澡婷杼久久婷婷婷草 逐步形成以「澡婷杼短片单元」为核心的原创影像体系，目前覆盖四个主要方向：单集 8—15 分钟的叙事短片、连续 6—12 集的微剧集、面向创作过程的幕后纪实，以及以社区档案形式沉淀的创作者访谈与作品年表。</p>
+      <p>短片方向侧重城市日常与轻悬疑题材，例如《雾港来信》《第七个夏天》《夜班便利店》都在 2026 年秋季档完成了新一轮剪辑版本上线。微剧集方向更强调连续性叙事，《桥下人家》《潮汐法庭》与《午夜订餐》构成目前社区讨论度最高的三条剧集线。幕后纪实则围绕具体作品展开，从分镜、勘景到后期调色，都留下了可回看的制作记录。</p>
+      <p>当前值得关注的具体内容集中在三个位置：一是 11 月 18 日上线的「澡婷杼秋季短片单元」共 8 部，其中《雾港来信》与《纸月亮》进入本周口碑榜前五；二是 11 月 22 日更新的《潮汐法庭》第 9 集，把主线案件推进到庭审阶段；三是社区档案库在 11 月 20 日解封了 14 份创作者手记，包含《桥下人家》导演的分镜草图说明。对第一次接触的观众，建议从短片单元入口进入，再按兴趣延伸到剧集与幕后内容。</p>
+    </section>
+
+    <!-- 板块2：精选内容推荐 -->
+    <section class="panel" id="shorts" aria-labelledby="shorts-h">
+      <p class="eyebrow">精选推荐</p>
+      <h2 id="shorts-h">本周值得看的短片与剧集</h2>
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-wugang01/400/300" width="400" height="300" loading="lazy" alt="雾港来信短片封面">
+          <div class="card-body">
+            <h3>雾港来信</h3>
+            <p class="desc">一封迟到七年的信牵出港口旧案，12 分钟单集叙事，结尾留白处理干净。</p>
+            <div class="tag-row"><span class="tag">短片</span><span class="tag">轻悬疑</span><span class="tag">城市</span></div>
+            <div class="meta-line"><span>热度 9.4</span><span>11-18 上线</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-zhiyueliang02/400/300" width="400" height="300" loading="lazy" alt="纸月亮短片封面">
+          <div class="card-body">
+            <h3>纸月亮</h3>
+            <p class="desc">以旧照相馆为舞台，用定格动画混合实拍，讲一个关于家庭相册的小故事。</p>
+            <div class="tag-row"><span class="tag">短片</span><span class="tag">定格动画</span><span class="tag">家庭</span></div>
+            <div class="meta-line"><span>热度 9.1</span><span>11-18 上线</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-chaoxifating03/400/300" width="400" height="300" loading="lazy" alt="潮汐法庭剧集封面">
+          <div class="card-body">
+            <h3>潮汐法庭</h3>
+            <p class="desc">12 集微剧集，围绕一桩海岸开发纠纷展开，第 9 集进入庭审对质阶段。</p>
+            <div class="tag-row"><span class="tag">微剧集</span><span class="tag">法庭</span><span class="tag">群像</span></div>
+            <div class="meta-line"><span>热度 9.6</span><span>11-22 更新</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-qiaoxia04/400/300" width="400" height="300" loading="lazy" alt="桥下人家剧集封面">
+          <div class="card-body">
+            <h3>桥下人家</h3>
+            <p class="desc">以桥洞空间为叙事核心，8 集篇幅描写三户人家的日常交错与搬迁前夜。</p>
+            <div class="tag-row"><span class="tag">微剧集</span><span class="tag">生活流</span><span class="tag">城市边缘</span></div>
+            <div class="meta-line"><span>热度 9.2</span><span>11-15 完结</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-yeban05/400/300" width="400" height="300" loading="lazy" alt="夜班便利店短片封面">
+          <div class="card-body">
+            <h3>夜班便利店</h3>
+            <p class="desc">单场景短片，凌晨三点的便利店与两位顾客，靠对白推进情绪。</p>
+            <div class="tag-row"><span class="tag">短片</span><span class="tag">对白驱动</span><span class="tag">夜戏</span></div>
+            <div class="meta-line"><span>热度 8.8</span><span>11-10 上线</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-wuye06/400/300" width="400" height="300" loading="lazy" alt="午夜订餐剧集封面">
+          <div class="card-body">
+            <h3>午夜订餐</h3>
+            <p class="desc">6 集短剧，每集围绕一份深夜外卖展开，结构轻盈，适合碎片时间观看。</p>
+            <div class="tag-row"><span class="tag">微剧集</span><span class="tag">单元剧</span><span class="tag">都市</span></div>
+            <div class="meta-line"><span>热度 8.9</span><span>11-05 上线</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-fenjing07/400/300" width="400" height="300" loading="lazy" alt="分镜手记幕后纪实封面">
+          <div class="card-body">
+            <h3>分镜手记：桥下人家</h3>
+            <p class="desc">幕后纪实 4 集，展示导演如何用 38 张手绘分镜完成桥洞空间调度。</p>
+            <div class="tag-row"><span class="tag">幕后</span><span class="tag">分镜</span><span class="tag">制作</span></div>
+            <div class="meta-line"><span>热度 9.0</span><span>11-20 上线</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/zaoting-diaose08/400/300" width="400" height="300" loading="lazy" alt="调色间纪录片封面">
+          <div class="card-body">
+            <h3>调色间的一下午</h3>
+            <p class="desc">跟随调色师完成《雾港来信》夜戏调色，理解冷暖对比如何服务叙事。</p>
+            <div class="tag-row"><span class="tag">幕后</span><span class="tag">调色</span><span class="tag">后期</span></div>
+            <div class="meta-line"><span>热度 8.7</span><span>11-19 上线</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 板块3：最新更新 / 动态 -->
+    <section class="panel" id="series" aria-labelledby="series-h">
+      <p class="eyebrow">最新动态</p>
+      <h2 id="series-h">近 30 天更新与上线记录</h2>
+      <ul class="compact-list">
+        <li><time datetime="2026-11-25">今天 09:30</time><span>《潮汐法庭》第 10 集预告上线，庭审证人名单更新。</span></li>
+        <li><time datetime="2026-11-24">昨天 21:10</time><span>《雾港来信》导演版剪辑说明发布，新增 3 段注释。</span></li>
+        <li><time datetime="2026-11-23">11 月 23 日</time><span>澡婷杼秋季短片单元第 8 部《纸月亮》进入口碑榜前五。</span></li>
+        <li><time datetime="2026-11-22">11 月 22 日</time><span>《潮汐法庭》第 9 集上线，主线案件进入庭审对质。</span></li>
+        <li><time datetime="2026-11-20">11 月 20 日</time><span>创作者档案库解封 14 份手记，含《桥下人家》分镜草图。</span></li>
+        <li><time datetime="2026-11-18">11 月 18 日</time><span>秋季短片单元 8 部集中上线，含 3 部定格动画混合实拍。</span></li>
+        <li><time datetime="2026-11-16">11 月 16 日</time><span>《桥下人家》全 8 集完结，社区开放长评征集。</span></li>
+        <li><time datetime="2026-11-12">11 月 12 日</time><span>「深夜单元」专题上线，收录 5 部夜戏短片。</span></li>
+        <li><time datetime="2026-11-08">11 月 8 日</time><span>《午夜订餐》第 6 集收官，单元剧结构讨论升温。</span></li>
+        <li><time datetime="2026-11-03">11 月 3 日</time><span>社区规则调整，长评需标注观看进度。</span></li>
+      </ul>
+    </section>
+
+    <!-- 板块4：分类入口 -->
+    <section class="panel" id="categories" aria-labelledby="cat-h">
+      <p class="eyebrow">分类入口</p>
+      <h2 id="cat-h">按类型找内容</h2>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#shorts"><strong>轻悬疑</strong><span>雾港来信 等 12 部</span></a>
+        <a class="cat-item" href="/#shorts"><strong>定格动画</strong><span>纸月亮 等 5 部</span></a>
+        <a class="cat-item" href="/#series"><strong>法庭剧</strong><span>潮汐法庭 等 4 部</span></a>
+        <a class="cat-item" href="/#series"><strong>生活流</strong><span>桥下人家 等 9 部</span></a>
+        <a class="cat-item" href="/#behind"><strong>幕后纪实</strong><span>分镜手记 等 18 条</span></a>
+        <a class="cat-item" href="/#creator"><strong>创作者档案</strong><span>导演 / 摄影 / 调色</span></a>
+        <a class="cat-item" href="/#community"><strong>社区长评</strong><span>本周新增 46 条</span></a>
+        <a class="cat-item" href="/#rank"><strong>口碑榜单</strong><span>每周一更新</span></a>
+      </div>
+    </section>
+
+    <!-- 板块5：深度解析正文 -->
+    <section class="panel deep" id="deep" aria-labelledby="deep-h">
+      <p class="eyebrow">深度解析</p>
+      <h2 id="deep-h">短片与微剧集：两种观看逻辑的差异</h2>
+      <p>在久久澡婷杼久久婷婷婷草 的内容体系里，短片和微剧集并不是长短之分，而是两种不同的叙事承诺。理解这一点，能帮助观众更快判断一个条目值不值得投入时间。</p>
+      <h3>短片：单点完成，重在看「怎么讲」</h3>
+      <p>澡婷杼短片单元的单集体量通常在 8—15 分钟，叙事目标是在一个场景或一个事件内完成情绪闭环。比如《夜班便利店》全程只发生在收银台前，《雾港来信》则用一封信串联起港口的三段时间。看短片时，判断标准更偏向形式与完成度：镜头是否有设计、结尾是否成立、声音与画面是否互相支撑。</p>
+      <ul>
+        <li>先看前 90 秒是否建立场景规则，再看结尾是否给出回应。</li>
+        <li>定格动画混合实拍的条目（如《纸月亮》）可以额外关注材质与运动节奏。</li>
+        <li>单场景短片优先留意对白密度与停顿处理。</li>
+      </ul>
+      <h3>微剧集：连续承诺，重在看「怎么铺」</h3>
+      <p>微剧集通常 6—12 集，每集 10—20 分钟，叙事依赖跨集的信息释放。《潮汐法庭》用 9 集铺垫证据链，第 10 集才进入庭审正面冲突；《桥下人家》则把搬迁作为时间压力，逐集推进三户人家的关系变化。判断微剧集的投入价值，可以看它是否在前三集建立起清晰的人物动机和冲突结构。</p>
+      <div class="pull-quote">一个实用的比较方法：把短片当成「一次完整的观看」，把微剧集当成「一段有节奏的陪伴」。前者看完成度，后者看持续性。</div>
+      <h3>幕后内容的位置</h3>
+      <p>幕后纪实不是附属品，而是理解作品的第二入口。《分镜手记：桥下人家》展示了 38 张手绘分镜如何对应桥洞空间调度，《调色间的一下午》则把夜戏调色的冷暖选择拆解给观众看。对已经看过正片的观众，幕后内容能补足「为什么这样拍」的判断依据；对还没看的观众，幕后也可以作为预览，帮助判断是否要投入时间。</p>
+      <h3>三条实用的判断维度</h3>
+      <ul>
+        <li><strong>完成度：</strong>结尾是否回应了开头提出的问题，声音与画面是否服务于同一目标。</li>
+        <li><strong>信息密度：</strong>短片看单位时间内的有效信息，微剧集看跨集信息的释放节奏。</li>
+        <li><strong>可回看性：</strong>值得回看的条目通常在细节上留有余地，比如《雾港来信》的时间线暗示。</li>
+      </ul>
+    </section>
+
+    <!-- 板块6：体验指南 / 消费路径 -->
+    <section class="panel" id="guide" aria-labelledby="guide-h">
+      <p class="eyebrow">观看路径</p>
+      <h2 id="guide-h">第一次接触，按什么顺序看</h2>
+      <p>如果你还不确定从哪开始，可以按下面的顺序建立对内容体系的整体印象，再决定深入哪个方向。</p>
+      <ol style="padding-left:1.3em; margin:0 0 1em;">
+        <li style="margin-bottom:0.5rem;"><strong>先看一部单场景短片。</strong>从《夜班便利店》开始，理解澡婷杼短片单元的对白与节奏偏好。</li>
+        <li style="margin-bottom:0.5rem;"><strong>再看一部结构型短片。</strong>《雾港来信》用时间线组织信息，能感受到单元在叙事上的另一条路线。</li>
+        <li style="margin-bottom:0.5rem;"><strong>尝试一部微剧集的前三集。</strong>《潮汐法庭》前三集建立了清晰的人物动机，适合检验自己对连续叙事节奏的接受度。</li>
+        <li style="margin-bottom:0.5rem;"><strong>最后补幕后。</strong>《分镜手记：桥下人家》能把你已经看过的内容重新组织一遍。</li>
+      </ol>
+      <p>比较同类条目时，优先看社区长评里关于「结尾是否成立」和「节奏是否拖沓」的具体讨论，而不是只看综合评分。评分高但讨论稀少的条目，往往说明它的可讨论维度有限。</p>
+    </section>
+
+    <!-- 板块7：FAQ -->
+    <section class="panel" id="faq" aria-labelledby="faq-h">
+      <p class="eyebrow">常见问题</p>
+      <h2 id="faq-h">观看与判断问答</h2>
+      <details>
+        <summary>澡婷杼短片单元一般多久更新一次？</summary>
+        <p>常规节奏是每两到三周上线一部，秋季档和春季档会集中上线。2026 年秋季单元在 11 月 18 日集中上线了 8 部，下一轮集中更新预计在 12 月中旬。</p>
+      </details>
+      <details>
+        <summary>短片和微剧集有什么区别，第一次看选哪个？</summary>
+        <p>短片是单集完成，适合先在 15 分钟内判断是否喜欢这种叙事风格；微剧集需要连续观看，适合已经对品牌内容有基本了解后深入。第一次接触建议从《夜班便利店》或《雾港来信》入手。</p>
+      </details>
+      <details>
+        <summary>《潮汐法庭》和《桥下人家》的叙事方式有什么不同？</summary>
+        <p>《潮汐法庭》是强冲突推进型，靠证据链和庭审节奏拉动；《桥下人家》是生活流群像，靠三户人家的日常交错积累情绪。前者的信息释放更集中，后者的可回看细节更多。</p>
+      </details>
+      <details>
+        <summary>社区长评里的评分是怎么形成的？</summary>
+        <p>长评评分来自社区成员观看后的独立打分，综合分只作为参考。更实用的做法是看长评中是否具体讨论了结尾、节奏或人物动机，这些内容比分数更能帮你判断是否值得投入时间。</p>
+      </details>
+      <details>
+        <summary>幕后纪实适合在看正片前还是后看？</summary>
+        <p>两者都可以。看前适合作为预览，帮助判断是否对题材和制作方式感兴趣；看后适合补足理解，比如《调色间的一下午》会让你重新注意夜戏的冷暖对比。</p>
+      </details>
+      <details>
+        <summary>从哪里能看到创作者的完整档案和作品年表？</summary>
+        <p>在创作者档案频道可以按导演、摄影、调色等角色筛选，每位创作者配有作品年表与手记条目。11 月 20 日解封的 14 份手记是目前最完整的一批资料。</p>
+      </details>
+    </section>
+
+    <!-- 板块8：用户评论 -->
+    <section class="panel" id="community" aria-labelledby="comment-h">
+      <p class="eyebrow">社区评论</p>
+      <h2 id="comment-h">观众最近在聊什么</h2>
+      <div class="comment-grid">
+        <div class="comment"><strong>雾港听风</strong><p>《雾港来信》结尾那封信的落款时间很关键，回看第二遍才注意到。</p></div>
+        <div class="comment"><strong>纸月亮收藏者</strong><p>定格动画和实拍混在一起居然不违和，材质对比做得很细。</p></div>
+        <div class="comment"><strong>庭审记录员</strong><p>《潮汐法庭》第 9 集对质节奏偏慢，但证词细节值得暂停看。</p></div>
+        <div class="comment"><strong>桥下散步</strong><p>《桥下人家》收得挺克制，搬迁前夜那场戏没有煽情，反而更重。</p></div>
+        <div class="comment"><strong>夜班常客</strong><p>《夜班便利店》几乎全靠对白，但停顿用得比很多长片好。</p></div>
+        <div class="comment"><strong>调色学徒</strong><p>《调色间的一下午》里冷暖对比的解释很清楚，适合入门看。</p></div>
+        <div class="comment"><strong>分镜本子</strong><p>38 张分镜对应桥洞调度，这个幕后条目信息量比正片花絮大。</p></div>
+        <div class="comment"><strong>午夜下单</strong><p>《午夜订餐》单元剧结构轻盈，但第 4 集情绪转得有点突然。</p></div>
+        <div class="comment"><strong>沉默看片</strong><p>综合分 9.6 的《潮汐法庭》我反而觉得中段拖，个人评分 8.5。</p></div>
+        <div class="comment"><strong>海岸线</strong><p>秋季单元里《纸月亮》和《雾港来信》风格差别很大，都值得看。</p></div>
+        <div class="comment"><strong>手记解封日</strong><p>11 月 20 日解封的创作者手记里，导演对桥洞的解释很具体。</p></div>
+        <div class="comment"><strong>第三集观众</strong><p>微剧集前三集定生死，《桥下人家》前三集人物关系立得很稳。</p></div>
+        <div class="comment"><strong>轻悬疑爱好者</strong><p>希望短片单元多出几部像《雾港来信》这种时间线结构。</p></div>
+        <div class="comment"><strong>定格小站</strong><p>《纸月亮》相册翻页那几帧做得很好，值得逐帧看。</p></div>
+        <div class="comment"><strong>长评标注派</strong><p>社区要求长评标观看进度之后，讨论质量确实有提升。</p></div>
+      </div>
+    </section>
+
+    <!-- 板块9：相关资讯 -->
+    <section class="panel" id="news" aria-labelledby="news-h">
+      <p class="eyebrow">相关资讯</p>
+      <h2 id="news-h">内容动态与社区焦点</h2>
+      <div class="news-grid">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen01/600/400" width="600" height="400" loading="lazy" alt="秋季短片单元上线报道配图">
+          <div class="news-body">
+            <h3>澡婷杼秋季短片单元 8 部上线</h3>
+            <time datetime="2026-11-18">2026-11-18</time>
+            <p>《雾港来信》《纸月亮》等 8 部作品集中上线，3 部采用定格动画混合实拍。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen02/600/400" width="600" height="400" loading="lazy" alt="潮汐法庭庭审阶段报道配图">
+          <div class="news-body">
+            <h3>《潮汐法庭》进入庭审阶段</h3>
+            <time datetime="2026-11-22">2026-11-22</time>
+            <p>第 9 集上线后主线案件进入对质，第 10 集预告已公布证人名单。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen03/600/400" width="600" height="400" loading="lazy" alt="创作者手记解封报道配图">
+          <div class="news-body">
+            <h3>14 份创作者手记解封</h3>
+            <time datetime="2026-11-20">2026-11-20</time>
+            <p>档案库新增《桥下人家》分镜草图说明等资料，支持按角色筛选。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen04/600/400" width="600" height="400" loading="lazy" alt="深夜单元专题报道配图">
+          <div class="news-body">
+            <h3>「深夜单元」专题上线</h3>
+            <time datetime="2026-11-12">2026-11-12</time>
+            <p>收录 5 部夜戏短片，含《夜班便利店》与两部早期作品修复版。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen05/600/400" width="600" height="400" loading="lazy" alt="社区长评规则调整报道配图">
+          <div class="news-body">
+            <h3>社区长评需标注观看进度</h3>
+            <time datetime="2026-11-03">2026-11-03</time>
+            <p>规则调整后，长评需标注观看集数，避免剧透式讨论影响判断。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/zaoting-xinwen06/600/400" width="600" height="400" loading="lazy" alt="桥下人家完结报道配图">
+          <div class="news-body">
+            <h3>《桥下人家》全 8 集完结</h3>
+            <time datetime="2026-11-16">2026-11-16</time>
+            <p>完结后社区开放长评征集，目前已有 23 篇讨论搬迁前夜那场戏。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 板块10：相关推荐 -->
+    <section class="panel" id="related" aria-labelledby="related-h">
+      <p class="eyebrow">延伸方向</p>
+      <h2 id="related-h">相关推荐与延伸标签</h2>
+      <div class="tag-index">
+        <a href="/#shorts">时间线结构短片</a>
+        <a href="/#shorts">单场景对白剧</a>
+        <a href="/#series">强冲突庭审剧</a>
+        <a href="/#series">生活流群像</a>
+        <a href="/#behind">分镜手记</a>
+        <a href="/#behind">夜戏调色</a>
+        <a href="/#creator">导演作品年表</a>
+        <a href="/#community">观看进度长评</a>
+      </div>
+    </section>
+
+    <!-- 板块11：补充板块 - 榜单 + 时间线 -->
+    <section class="panel" id="rank" aria-labelledby="rank-h">
+      <p class="eyebrow">口碑榜单</p>
+      <h2 id="rank-h">本周社区口碑榜（截至 11 月 25 日）</h2>
+      <ol class="rank-list">
+        <li><span>潮汐法庭</span><span class="score">9.6</span></li>
+        <li><span>雾港来信</span><span class="score">9.4</span></li>
+        <li><span>桥下人家</span><span class="score">9.2</span></li>
+        <li><span>纸月亮</span><span class="score">9.1</span></li>
+        <li><span>分镜手记：桥下人家</span><span class="score">9.0</span></li>
+        <li><span>午夜订餐</span><span class="score">8.9</span></li>
+      </ol>
+      <hr class="divider">
+      <h3 style="font-size:1rem;">档案更新时间线</h3>
+      <ul class="timeline">
+        <li><time datetime="2026-11-25">11-25</time><span>《潮汐法庭》第 10 集预告与证人名单更新</span></li>
+        <li><time datetime="2026-11-22">11-22</time><span>《潮汐法庭》第 9 集上线，庭审对质开始</span></li>
+        <li><time datetime="2026-11-20">11-20</time><span>创作者手记解封 14 份</span></li>
+        <li><time datetime="2026-11-18">11-18</time><span>秋季短片单元 8 部集中上线</span></li>
+        <li><time datetime="2026-11-16">11-16</time><span>《桥下人家》全 8 集完结</span></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="side-panel">
+      <h2>今日更新</h2>
+      <ul class="compact-list">
+        <li><time>09:30</time><span>《潮汐法庭》第 10 集预告</span></li>
+        <li><time>08:10</time><span>社区长评新增 6 篇</span></li>
+        <li><time>昨天</time><span>《雾港来信》导演版注释</span></li>
+      </ul>
+    </div>
+    <div class="side-panel" id="creator">
+      <h2>创作者档案</h2>
+      <ul class="compact-list">
+        <li><span>何岸 · 导演</span><span>《桥下人家》</span></li>
+        <li><span>林迟 · 摄影</span><span>《雾港来信》</span></li>
+        <li><span>周见 · 调色</span><span>夜戏单元</span></li>
+        <li><span>苏禾 · 动画</span><span>《纸月亮》</span></li>
+      </ul>
+    </div>
+    <div class="side-panel">
+      <h2>快速筛选</h2>
+      <p style="font-size:0.82rem;color:var(--muted);margin:0;">按类型浏览：</p>
+      <div class="tag-row" style="margin-top:0.5rem;">
+        <a class="tag" href="/#shorts">短片</a>
+        <a class="tag" href="/#series">微剧集</a>
+        <a class="tag" href="/#behind">幕后</a>
+        <a class="tag" href="/#rank">榜单</a>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer" id="behind">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>久久澡婷杼久久婷婷婷草</h3>
+        <p>原创短片、微剧集与创作者纪实的视频内容品牌，持续记录影像叙事、幕后制作与观看判断。</p>
+      </div>
+      <div>
+        <h3>内容频道</h3>
+        <ul class="footer-links">
+          <li><a href="/#shorts">原创短片</a></li>
+          <li><a href="/#series">微剧集</a></li>
+          <li><a href="/#behind">幕后纪实</a></li>
+          <li><a href="/#creator">创作者档案</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>社区</h3>
+        <ul class="footer-links">
+          <li><a href="/#community">社区评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#rank">口碑榜单</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>说明</h3>
+        <ul class="footer-links">
+          <li><a href="/#guide">观看路径</a></li>
+          <li><a href="/#overview">内容概览</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 久久澡婷杼久久婷婷婷草 · 内容示例站点</span>
+      <span>条目数据与评分为社区示例，更新截至 2026-11-25</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var input = document.getElementById('siteSearch');
+    var tip = document.getElementById('searchTip');
+    if (!input || !tip) return;
+
+    var targets = Array.prototype.slice.call(
+      document.querySelectorAll('.card, .compact-list li, .news-item, .comment, .cat-item, .rank-list li, .timeline li')
+    );
+
+    function clearMarks() {
+      targets.forEach(function (el) {
+        el.classList.remove('is-hidden');
+      });
+      tip.textContent = '';
+    }
+
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      if (!q) { clearMarks(); return; }
+      var visible = 0;
+      targets.forEach(function (el) {
+        var text = (el.textContent || '').toLowerCase();
+        var hit = text.indexOf(q) !== -1;
+        el.classList.toggle('is-hidden', !hit);
+        if (hit) visible++;
+      });
+      tip.textContent = visible ? '匹配 ' + visible + ' 条内容' : '没有找到相关条目，试试「短片」「庭审」「调色」等词';
+    });
+
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { input.value = ''; clearMarks(); input.blur(); }
+    });
+  })();
+</script>
+</body>
+  </html>
